@@ -1,0 +1,90 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  hello-text
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+
+
+ <ion-header>
+<ion-toolbar color="dark"> 
+  
+  <ion-grid>
+    
+    <ion-row>
+      <div class="nav">
+  <nav>
+  <a href="http://localhost:8100/signin">HOME</a> |
+  <a href="http://localhost:8100/components">COMPONENT</a> 
+  </nav>
+</div>
+      <ion-col class="colt"><ion-title class="ion-text-center"> USER DETAILS</ion-title></ion-col>
+        
+       <ion-col></ion-col>
+       <ion-col></ion-col>
+       <ion-col></ion-col>
+      <ion-col class="homet"><ion-button (click)="home()">
+        <ion-icon name="exit-outline" color="light"></ion-icon>
+      </ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+</ion-toolbar>
+
+</ion-header> 
+
+<ion-content class="signin-bg" >
+<!-- <ion-card *ngFor="let user of users" class="card">
+<ion-card-content class="content">
+  <p class="table"><strong>EMAIL:</strong> {{user.ud_email}}</p>
+  <p class="table"><strong>FIRST NAME:</strong> {{user.ud_firsname}}</p>
+  <p class="table"><strong>LAST NAME:</strong> {{user.ud_lastname}}</p>
+  
+
+</ion-card-content>
+
+</ion-card>
+</ion-content>  -->
+
+
+<ion-content class="ion-padding">
+
+<div > 
+  
+  <ion-searchbar [debounce]="1000" [(ngModel)]="searchedTerm" class="custom" color="dark" display="flex" show-cancel-button="focus" show-clear-button="never" (ngModelChange)="filterUsers()"> 
+    ngModelChange works not (ioninput)
+  </ion-searchbar> 
+</div>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>S.NO</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users">
+         <td>{{ user.ud_code }}</td>
+        <td>{{ user.ud_firstname }}</td>
+        <td>{{ user.ud_lastname }}</td>
+        <td>{{ user.ud_email }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="users.length === 0">No users found</p>
+
+</ion-content>

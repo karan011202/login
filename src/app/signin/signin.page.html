@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">
+       DASHBOARD 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="signin-bg">
+
+ <div class="center-wrapper">
+
+
+<!-- <ion-card color="primary"> -->
+  <ion-card class="cbg">
+  <ion-card-header>
+    <ion-card-title>
+      <ion-grid>
+   <ion-row>
+    <ion-col><ion-button class="signinbtn" fill="solid" color="dark" expand="block"> SIGNIN </ion-button></ion-col>
+    <ion-col> <ion-button  class="signupbtn" fill="solid" color="dark" expand="block" (click)="signup1()"> SIGNUP </ion-button>
+</ion-col>
+    </ion-row>
+ </ion-grid> 
+      
+       <!-- <ion-radio-group value="SIGNIN">
+        <ion-grid>
+        <ion-row>
+    <ion-col><ion-radio value= "SIGNIN" aria-label="primary" color="light"> SIGNIN</ion-radio>
+  
+  </ion-col>
+    <ion-col> <ion-radio value="signup" color="light" [disabled]="false">SIGNUP</ion-radio>
+</ion-col>
+    </ion-row>
+ </ion-grid> 
+        
+  
+</ion-radio-group> -->
+
+
+<!-- <ion-radio-group [(ngModel)]="authMode">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-radio value="signin" color="light">
+          SIGNIN
+        </ion-radio>
+      </ion-col>
+
+      <ion-col>
+        <ion-radio value="signup" color="light">
+          SIGNUP
+        </ion-radio>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-radio-group> -->
+
+    </ion-card-title>
+    <ion-card-subtitle>Enter credentials</ion-card-subtitle>
+  </ion-card-header>
+
+  <!-- <ion-card-content >
+   <ion-item class="emailt">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          type="email"
+          [(ngModel)]="email">
+        </ion-input>
+      </ion-item>
+      <ion-item class="pswrdt">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="password">
+        </ion-input>
+      </ion-item>
+      
+       
+  </ion-card-content> -->
+ <ion-card-content>
+
+  <!-- SIGN IN FORM -->
+  <div>
+    <!-- <div *ngIf="authMode === 'signin'"> -->
+    <ion-item class="emailt">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="signinData.email"></ion-input>
+    </ion-item>
+
+    <ion-item class="pswrdt">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [type]="showPassword?'password' :'text'" [(ngModel)]="signinData.password">
+      <ion-input-password-toggle slot="end" ></ion-input-password-toggle> </ion-input>
+
+    </ion-item>
+    <!-- <div class="ion-button">
+    <ion-button fill="solid" color="light" expand ="undefined" [disabled]="false">SUBMIT</ion-button> 
+  </div> -->
+  
+</div>
+<!-- <ion-item class="cb" lines="none">
+  <ion-checkbox  labelPlacement="end"[(ngModel)]="showPassword"></ion-checkbox>
+   <ion-label class="ion-margin-start">Show Password</ion-label> -->
+<!-- </ion-item>  -->
+
+
+  <!-- SIGN UP CONTENT -->
+  <!-- <div *ngIf="authMode === 'signup'" class="hello-text">
+    <ion-item class="emailt">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="signupData.email"></ion-input>
+    </ion-item>
+    <ion-item class="emailt">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="signupData.password"></ion-input>
+    </ion-item>
+    <ion-item class="emailt">
+      <ion-label position="floating">Enter First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="signupData.firstname"></ion-input>
+    </ion-item>
+     <ion-item class="emailt">
+      <ion-label position="floating">Enter Last Namae</ion-label>
+      <ion-input type="text" [(ngModel)]="signupData.lastname"></ion-input>
+    </ion-item>
+    
+    
+  </div> -->
+<div class="ion-button">
+    <ion-button fill="solid" color="light" expand ="block" (click)="submit()">
+     SUBMIT
+    </ion-button> 
+  </div>
+
+  <div class="forgot">
+    <!-- <a href="http://localhost:8100/forgot" color="danger">FORGOT PASSWORD?</a> -->
+     <a><ion-text color="danger" (click)="goToForgot()"> FORGOT PASSWORD?</ion-text>
+    </a>
+  </div>
+</ion-card-content>
+
+  
+  
+</ion-card>
+</div>

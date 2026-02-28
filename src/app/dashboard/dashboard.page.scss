@@ -1,0 +1,62 @@
+// .table{
+//     color: rgb(248, 243, 243);
+// }
+
+// .card{
+//    color: white;
+//     width: 500px;
+// }
+
+
+
+// .signin-bg {
+//   --background: none;
+//   background-image: url('/assets/images/signinp.jpg');
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
+
+// .content{
+//     color: white;
+
+// }
+
+.nav{
+  margin-top: 1px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #fefefe;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #000000;
+  font-weight: bold;
+}
+
+.homet{
+    justify-content: right;
+}
+
+.custom{ 
+  width: 400px ;
+  margin-left: 1100px;
+  margin-bottom: 10px;
+  justify-content: right;
+  display: flex;
+}
+
+.colt{
+  margin-top: 10px;
+  margin-left: 650px;
+
+}

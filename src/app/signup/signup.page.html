@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">
+      DASHBOARD 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="signin-bg">
+
+ <div class="center-wrapper">
+
+
+<ion-card color="primary">
+  
+  <ion-card-header>
+   
+    <ion-card-title>
+     
+
+      <!-- <ion-grid>
+   <ion-row>
+    <ion-col><ion-button class="signinbtn" fill="solid" color="dark" expand="block"> SIGNIN </ion-button></ion-col>
+    <ion-col> <ion-button  class="signupbtn" fill="solid" color="dark" expand="block" href="/signup/signup.page.html"> SIGNUP </ion-button>
+</ion-col>
+    </ion-row>
+ </ion-grid> 
+       -->
+       <!-- <ion-radio-group value="SIGNIN">
+        <ion-grid>
+        <ion-row>
+    <ion-col><ion-radio value= "SIGNIN" aria-label="primary" color="light"> SIGNIN</ion-radio>
+  
+  </ion-col>
+    <ion-col> <ion-radio value="signup" color="light" [disabled]="false">SIGNUP</ion-radio>
+</ion-col>
+    </ion-row>
+ </ion-grid> 
+        
+  
+</ion-radio-group> -->
+
+SIGNUP
+
+
+
+ <ion-button class="cross"   color="dark" (click)="home();reset() " > <ion-icon name="close-outline" color="light"></ion-icon></ion-button>
+
+
+    </ion-card-title>
+     
+    <ion-card-subtitle>Enter credentials</ion-card-subtitle>
+  </ion-card-header>
+
+  <!-- <ion-card-content >
+   <ion-item class="emailt">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          type="email"
+          [(ngModel)]="email">
+        </ion-input>
+      </ion-item>
+      <ion-item class="pswrdt">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="password">
+        </ion-input>
+      </ion-item>
+      
+       
+  </ion-card-content> -->
+ <ion-card-content>
+      
+ 
+
+  <!-- SIGN UP CONTENT -->
+  
+    <ion-item class="emailt">
+      <ion-label position="floating">Email <span class="star">*</span></ion-label>
+      <ion-input type="email" [(ngModel)]="signupData.email"></ion-input>
+    </ion-item>
+   
+    <ion-item class="emailt">
+      <ion-label position="floating">Password <span class="star">*</span></ion-label>
+      <!-- <ion-input [type]="showPassword?'password' :'text'" [(ngModel)]="signinData.password">
+      <ion-input-password-toggle slot="end" ></ion-input-password-toggle> </ion-input> -->
+
+      <ion-input [type]="showpassword? 'password':'text'" [(ngModel)]="signupData.password"  #password="ngModel" 
+      required
+      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$"><ion-input-password-toggle slot="end" ></ion-input-password-toggle></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="password.invalid && password.dirty">
+     <h6> Password must be 8+ characterss, include (A-Z),
+          include (a-z), number & special character.
+      </h6>
+   </ion-text>
+        <ion-item class="emailt">
+      <ion-label position="floating"> Confirm Password <span class="star">*</span></ion-label>
+      <ion-input [type]="showpassword? 'password':'text'" [(ngModel)]="signupData.confirmpassword" >
+        <ion-input-password-toggle slot="end" ></ion-input-password-toggle>
+      </ion-input>
+      </ion-item>
+      <!-- <ion-text color="danger" *ngIf="signupData.password == signupData.confirmpassword">
+     <h6> Password Matched
+      </h6>
+   </ion-text> -->
+      <!-- Match -->
+<ion-text color="success"
+  *ngIf="signupData.password && signupData.confirmpassword 
+         && signupData.password === signupData.confirmpassword">
+  <h6>Password Matched</h6>
+</ion-text>
+
+<!-- Not Match -->
+<ion-text color="danger"
+  *ngIf="signupData.confirmpassword 
+         && signupData.password !== signupData.confirmpassword">
+  <h6>Passwords do not match</h6>
+</ion-text>
+    <ion-item class="emailt">
+      <ion-label position="floating">Enter First Name<span class="star">*</span></ion-label>
+      <ion-input type="text" [(ngModel)]="signupData.firstname"></ion-input>
+    </ion-item>
+
+     <ion-item class="emailt">
+      <ion-label position="floating">Enter Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="signupData.lastname"></ion-input>
+    </ion-item>
+    <p class="star"> * Fields are required </p>
+    
+  
+<div class="ion-button">
+    <ion-button fill="solid" color="light" expand ="block" (click)="submit()"> 
+      SUBMIT
+      
+    </ion-button> 
+  </div>
+</ion-card-content>
+</ion-card>
+</div>

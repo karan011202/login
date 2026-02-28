@@ -1,0 +1,52 @@
+.ion-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.emailt ion-label{
+    color:#050505
+}
+
+
+  ion-input {
+  --color: #070707;      
+  --placeholder-color: #000000;
+}
+
+ion-item {
+  --background: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+ ion-card {
+  width: 100%;
+  max-width: 500px;          
+}
+
+
+
+.center-wrapper{ height: 50%;
+  display: flex;
+  justify-content: center;   
+  align-items: center; 
+  margin-top: 150px;      
+  }
+
+
+  .signin-bg {
+  --background: none;
+  background-image: url('/assets/images/signinp.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cross{
+  justify-content: right;
+  margin-left: 330px;
+}
+
+.star{
+  color: red;
+}
